@@ -193,7 +193,7 @@ src/
 | `npm start` | Start the Expo dev server |
 | `npm run android` | Start and open on Android |
 | `npm run ios` | Start and open on iOS |
-| `npx tsc --noEmit` | Type-check the project |
+| `npm run typecheck` | Type-check the project |
 
 ## Screenshots and demo
 

@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useRef, useState } from 'react';
-import { Alert, KeyboardAvoidingView, Platform, Pressable, RefreshControl, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, KeyboardAvoidingView, Pressable, RefreshControl, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Badge, Banner, Button, Card, ConfirmDialog, DateTimeField, ErrorState, Input, Loader, ScreenHeader, VisitForm } from '@/components';
 import { VISIT_STATUS_COLORS } from '@/constants';
@@ -155,7 +155,7 @@ function VisitDetail({ id }: { id: string }) {
           </Pressable>
         }
       />
-      <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardAvoidingView style={styles.flex} behavior="padding">
         <ScrollView
           contentContainerStyle={styles.content}
           keyboardShouldPersistTaps="handled"

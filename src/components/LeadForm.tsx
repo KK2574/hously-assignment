@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import React, { useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { KeyboardAvoidingView, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { EXECUTIVES, LEAD_PRIORITIES, LEAD_SOURCES, LEAD_STAGES, PRIORITY_COLORS, STAGE_COLORS } from '@/constants';
 import { fontSize, spacing } from '@/constants/theme';
@@ -73,7 +73,7 @@ export function LeadForm({ lead, onSaved, onCancel }: Props) {
           ) : undefined
         }
       />
-      <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardAvoidingView style={styles.flex} behavior="padding">
         <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
           {serverError ? <Banner tone="error" message={serverError} /> : null}
 

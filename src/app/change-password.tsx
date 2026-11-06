@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'expo-router';
 import React, { useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Alert, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, TextInput, View } from 'react-native';
+import { Alert, KeyboardAvoidingView, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 
 import { Banner, Button, Input, ScreenHeader } from '@/components';
 import { spacing } from '@/constants/theme';
@@ -39,7 +39,7 @@ export default function ChangePasswordScreen() {
   return (
     <View style={[styles.flex, { backgroundColor: colors.background }]}>
       <ScreenHeader title="Change password" back />
-      <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardAvoidingView style={styles.flex} behavior="padding">
         <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
           {serverError ? <Banner tone="error" message={serverError} /> : null}
 

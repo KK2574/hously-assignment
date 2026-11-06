@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import React, { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, View } from 'react-native';
+import { KeyboardAvoidingView, ScrollView, StyleSheet, View } from 'react-native';
 
 import { spacing } from '@/constants/theme';
 import { useTheme } from '@/context/ThemeContext';
@@ -81,7 +81,7 @@ export function SiteVisitForm({ initialLeadId, initialPropertyId, onSaved }: Pro
   return (
     <View style={[styles.flex, { backgroundColor: colors.background }]}>
       <ScreenHeader title="Schedule site visit" back />
-      <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardAvoidingView style={styles.flex} behavior="padding">
         <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
           {serverError ? <Banner tone="error" message={serverError} /> : null}
 

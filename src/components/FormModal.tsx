@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { fontSize, radius, spacing } from '@/constants/theme';
 import { useTheme } from '@/context/ThemeContext';
@@ -23,7 +23,7 @@ export function FormModal({ visible, title, confirmLabel = 'Save', loading, erro
   const { colors } = useTheme();
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={loading ? undefined : onCancel}>
-      <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardAvoidingView style={styles.flex} behavior="padding">
         <Pressable style={[styles.backdrop, { backgroundColor: colors.overlay }]} onPress={loading ? undefined : onCancel}>
           <Pressable style={[styles.card, { backgroundColor: colors.surface }]} onPress={() => undefined}>
             <Text style={[styles.title, { color: colors.text }]}>{title}</Text>

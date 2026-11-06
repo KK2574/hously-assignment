@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as ImagePicker from 'expo-image-picker';
 import React, { useEffect, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Alert, Image, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View } from 'react-native';
+import { Alert, Image, KeyboardAvoidingView, Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View } from 'react-native';
 
 import { LISTING_TYPES, PROPERTY_STATUSES, PROPERTY_TYPES } from '@/constants';
 import { fontSize, radius, spacing } from '@/constants/theme';
@@ -126,7 +126,7 @@ export function PropertyForm({ property, onSaved, onCancel }: Props) {
           ) : undefined
         }
       />
-      <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardAvoidingView style={styles.flex} behavior="padding">
         <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
           {serverError ? <Banner tone="error" message={serverError} /> : null}
 

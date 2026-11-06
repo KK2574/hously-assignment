@@ -2,7 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as ImagePicker from 'expo-image-picker';
 import React, { useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Alert, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { Avatar, Banner, Button, Card, Input, ScreenHeader } from '@/components';
 import { fontSize, spacing } from '@/constants/theme';
@@ -78,7 +78,7 @@ export default function ProfileScreen() {
   return (
     <View style={[styles.flex, { backgroundColor: colors.background }]}>
       <ScreenHeader title="My profile" back />
-      <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardAvoidingView style={styles.flex} behavior="padding">
         <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
           {saved ? <Banner tone="success" message="Profile updated." /> : null}
           {serverError ? <Banner tone="error" message={serverError} /> : null}

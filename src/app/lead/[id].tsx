@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useRef, useState } from 'react';
-import { Alert, KeyboardAvoidingView, Platform, Pressable, RefreshControl, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, KeyboardAvoidingView, Pressable, RefreshControl, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import {
   Avatar,
@@ -169,7 +169,7 @@ function LeadDetail({ id }: { id: string }) {
   return (
     <View style={[styles.flex, { backgroundColor: colors.background }]}>
       <ScreenHeader title={lead.name} subtitle={`Lead · added ${formatDate(lead.createdAt)}`} back right={headerActions} />
-      <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <KeyboardAvoidingView style={styles.flex} behavior="padding">
         <ScrollView
           contentContainerStyle={styles.content}
           keyboardShouldPersistTaps="handled"

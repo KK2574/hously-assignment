@@ -10,6 +10,7 @@ import { useFetch } from '@/hooks/useFetch';
 import { getErrorMessage, leadService, notificationService } from '@/services';
 import type { AppNotification, NotificationType } from '@/types';
 import { timeAgo } from '@/utils/format';
+import { sendSystemNotification } from '@/utils/systemNotification';
 
 const TYPE_ICONS: Record<NotificationType, keyof typeof Ionicons.glyphMap> = {
   followup: 'alarm-outline',
@@ -130,7 +131,7 @@ export default function NotificationsScreen() {
                 onPress={() =>
                   run(async () => {
                     const lead = await leadService.simulate();
-                    setToast(`New lead received: ${lead.name}`);
+                    await sendSystemNotification('New lead received', `${lead.name} enquired via ${lead.source}.`, { leadId: lead.id });
                   }, 'Could not simulate a lead')
                 }
               />

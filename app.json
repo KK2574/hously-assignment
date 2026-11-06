@@ -42,6 +42,12 @@
         {
           "photosPermission": "Hously CRM needs access to your photos so you can add property pictures and a profile photo."
         }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#1565D8"
+        }
       ]
     ],
     "experiments": {

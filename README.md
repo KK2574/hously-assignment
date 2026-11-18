@@ -195,10 +195,6 @@ src/
 | `npm run ios` | Start and open on iOS |
 | `npm run typecheck` | Type-check the project |
 
-## Screenshots and demo
-
-Screenshots are in `docs/screenshots/`. Demo video: _add link here_.
-
 ## Resetting demo data
 
 Clear the app's storage (or reinstall the app) to re-seed the mock database.
